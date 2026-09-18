@@ -1,0 +1,1524 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="QuickBite - Order delicious food from your favourite restaurants.">
+
+    <title>QuickBite | Food Delivery</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER / NAVIGATION
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-icon">🍴</span>
+                <span>Quick<span class="logo-highlight">Bite</span></span>
+            </a>
+
+            <!-- Location -->
+            <button class="location-btn" id="locationBtn">
+                <span>📍</span>
+                <span>
+                    <small>Deliver to</small>
+                    <strong id="locationText">Select location</strong>
+                </span>
+                <span>⌄</span>
+            </button>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <a href="#home" class="active">Home</a>
+                <a href="#restaurants">Restaurants</a>
+                <a href="#offers">Offers</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="nav-actions">
+
+                <button class="icon-btn" id="searchBtn" aria-label="Search">
+                    🔍
+                </button>
+
+                <button class="icon-btn favorite-btn" id="favoriteBtn" aria-label="Favorites">
+                    ♡
+                </button>
+
+                <button class="cart-btn" id="cartBtn">
+                    🛒
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button class="login-btn" id="loginBtn">
+                    Login
+                </button>
+
+            </div>
+
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#offers">Offers</a>
+            <a href="#about">About</a>
+            <a href="#" id="mobileLoginBtn">Login</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO SECTION
+        ====================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="hero-tag">
+                        🍽️ Delicious food, delivered fast
+                    </span>
+
+                    <h1>
+                        Your favourite food,
+                        <span>just a few clicks away.</span>
+                    </h1>
+
+                    <p>
+                        Discover the best restaurants around you and
+                        get your favourite meals delivered straight to
+                        your doorstep.
+                    </p>
+
+                    <!-- Search -->
+                    <div class="hero-search">
+
+                        <span class="search-icon">🔍</span>
+
+                        <input
+                            type="text"
+                            id="foodSearch"
+                            placeholder="Search for food, restaurants or dishes..."
+                            autocomplete="off">
+
+                        <button id="heroSearchBtn">
+                            Search
+                        </button>
+
+                    </div>
+
+                    <!-- Quick categories -->
+                    <div class="quick-search">
+
+                        <span>Popular:</span>
+
+                        <button data-search="Biryani">Biryani</button>
+                        <button data-search="Pizza">Pizza</button>
+                        <button data-search="Burger">Burger</button>
+                        <button data-search="Chicken">Chicken</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOD CATEGORIES
+        ====================================================== -->
+
+        <section class="categories-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">Explore</span>
+                        <h2>What are you craving?</h2>
+                    </div>
+
+                    <a href="#restaurants" class="view-all">
+                        View all →
+                    </a>
+
+                </div>
+
+                <div class="category-grid">
+
+                    <button class="category-card" data-category="Biryani">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=500&q=80"
+                                alt="Biryani">
+                        </div>
+                        <h3>Biryani</h3>
+                        <p>25+ dishes</p>
+                    </button>
+
+                    <button class="category-card" data-category="Pizza">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
+                                alt="Pizza">
+                        </div>
+                        <h3>Pizza</h3>
+                        <p>30+ dishes</p>
+                    </button>
+
+                    <button class="category-card" data-category="Burger">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+                                alt="Burger">
+                        </div>
+                        <h3>Burgers</h3>
+                        <p>20+ dishes</p>
+                    </button>
+
+                    <button class="category-card" data-category="Indian">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80"
+                                alt="Indian food">
+                        </div>
+                        <h3>Indian</h3>
+                        <p>40+ dishes</p>
+                    </button>
+
+                    <button class="category-card" data-category="Chicken">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80"
+                                alt="Chicken">
+                        </div>
+                        <h3>Chicken</h3>
+                        <p>35+ dishes</p>
+                    </button>
+
+                    <button class="category-card" data-category="Dessert">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80"
+                                alt="Dessert">
+                        </div>
+                        <h3>Desserts</h3>
+                        <p>18+ dishes</p>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             OFFERS BANNER
+        ====================================================== -->
+
+        <section class="offers-section" id="offers">
+
+            <div class="container">
+
+                <div class="offer-banner">
+
+                    <div class="offer-content">
+
+                        <span class="offer-label">
+                            🔥 LIMITED TIME OFFER
+                        </span>
+
+                        <h2>
+                            Get 50% OFF
+                        </h2>
+
+                        <p>
+                            On your first order. Use code
+                            <strong>WELCOME50</strong>
+                        </p>
+
+                        <button class="primary-btn" id="offerBtn">
+                            Order Now →
+                        </button>
+
+                    </div>
+
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85"
+                            alt="Delicious food">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESTAURANTS
+        ====================================================== -->
+
+        <section class="restaurants-section" id="restaurants">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">Nearby</span>
+                        <h2>Popular restaurants</h2>
+                    </div>
+
+                    <a href="#" class="view-all" id="viewAllRestaurants">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <!-- Restaurant filters -->
+
+                <div class="filter-bar">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="rating">
+                        ⭐ 4.0+
+                    </button>
+
+                    <button class="filter-btn" data-filter="fast">
+                        ⚡ Fast delivery
+                    </button>
+
+                    <button class="filter-btn" data-filter="veg">
+                        🥬 Pure Veg
+                    </button>
+
+                    <button class="filter-btn" data-filter="offers">
+                        🏷️ Offers
+                    </button>
+
+                </div>
+
+
+                <!-- Restaurant Grid -->
+
+                <div class="restaurant-grid" id="restaurantGrid">
+
+
+                    <!-- Restaurant 1 -->
+
+                    <article class="restaurant-card"
+                        data-category="Indian"
+                        data-rating="4.6"
+                        data-delivery="25"
+                        data-offer="true">
+
+                        <div class="restaurant-image">
+
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                                alt="Spice Route restaurant">
+
+                            <span class="offer-badge">
+                                50% OFF
+                            </span>
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <div class="restaurant-info">
+
+                            <div class="restaurant-title">
+                                <h3>Spice Route</h3>
+                                <span class="rating">★ 4.6</span>
+                            </div>
+
+                            <p class="cuisine">
+                                Indian • Biryani • North Indian
+                            </p>
+
+                            <div class="restaurant-meta">
+                                <span>₹₹</span>
+                                <span>•</span>
+                                <span>25–30 min</span>
+                                <span>•</span>
+                                <span>2.5 km</span>
+                            </div>
+
+                            <button class="menu-btn" data-restaurant="Spice Route">
+                                View Menu
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Restaurant 2 -->
+
+                    <article class="restaurant-card"
+                        data-category="Burger"
+                        data-rating="4.4"
+                        data-delivery="20"
+                        data-offer="false">
+
+                        <div class="restaurant-image">
+
+                            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80"
+                                alt="Burger House restaurant">
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <div class="restaurant-info">
+
+                            <div class="restaurant-title">
+                                <h3>Burger House</h3>
+                                <span class="rating">★ 4.4</span>
+                            </div>
+
+                            <p class="cuisine">
+                                Burgers • Fast Food • Fries
+                            </p>
+
+                            <div class="restaurant-meta">
+                                <span>₹₹</span>
+                                <span>•</span>
+                                <span>20–25 min</span>
+                                <span>•</span>
+                                <span>1.8 km</span>
+                            </div>
+
+                            <button class="menu-btn" data-restaurant="Burger House">
+                                View Menu
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Restaurant 3 -->
+
+                    <article class="restaurant-card"
+                        data-category="Pizza"
+                        data-rating="4.7"
+                        data-delivery="30"
+                        data-offer="true">
+
+                        <div class="restaurant-image">
+
+                            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80"
+                                alt="La Piazza restaurant">
+
+                            <span class="offer-badge">
+                                FREE DELIVERY
+                            </span>
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <div class="restaurant-info">
+
+                            <div class="restaurant-title">
+                                <h3>La Piazza</h3>
+                                <span class="rating">★ 4.7</span>
+                            </div>
+
+                            <p class="cuisine">
+                                Pizza • Italian • Pasta
+                            </p>
+
+                            <div class="restaurant-meta">
+                                <span>₹₹₹</span>
+                                <span>•</span>
+                                <span>30–35 min</span>
+                                <span>•</span>
+                                <span>3.2 km</span>
+                            </div>
+
+                            <button class="menu-btn" data-restaurant="La Piazza">
+                                View Menu
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Restaurant 4 -->
+
+                    <article class="restaurant-card"
+                        data-category="Chicken"
+                        data-rating="4.3"
+                        data-delivery="25"
+                        data-offer="false">
+
+                        <div class="restaurant-image">
+
+                            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80"
+                                alt="Malabar Kitchen restaurant">
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <div class="restaurant-info">
+
+                            <div class="restaurant-title">
+                                <h3>Malabar Kitchen</h3>
+                                <span class="rating">★ 4.3</span>
+                            </div>
+
+                            <p class="cuisine">
+                                Kerala • Chicken • Seafood
+                            </p>
+
+                            <div class="restaurant-meta">
+                                <span>₹₹</span>
+                                <span>•</span>
+                                <span>25–30 min</span>
+                                <span>•</span>
+                                <span>2.1 km</span>
+                            </div>
+
+                            <button class="menu-btn" data-restaurant="Malabar Kitchen">
+                                View Menu
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             POPULAR DISHES
+        ====================================================== -->
+
+        <section class="dishes-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">Customer favourites</span>
+                        <h2>Popular dishes</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="dish-grid">
+
+
+                    <!-- Dish 1 -->
+
+                    <article class="dish-card">
+
+                        <div class="dish-image">
+
+                            <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80"
+                                alt="Chicken Biryani">
+
+                            <span class="veg-indicator non-veg">
+                                ●
+                            </span>
+
+                        </div>
+
+                        <div class="dish-info">
+
+                            <span class="dish-restaurant">
+                                Spice Route
+                            </span>
+
+                            <h3>Chicken Biryani</h3>
+
+                            <p>
+                                Fragrant basmati rice with spicy chicken
+                            </p>
+
+                            <div class="dish-bottom">
+
+                                <strong>₹180</strong>
+
+                                <button class="add-btn"
+                                    data-name="Chicken Biryani"
+                                    data-price="180">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Dish 2 -->
+
+                    <article class="dish-card">
+
+                        <div class="dish-image">
+
+                            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"
+                                alt="Margherita Pizza">
+
+                            <span class="veg-indicator veg">
+                                ●
+                            </span>
+
+                        </div>
+
+                        <div class="dish-info">
+
+                            <span class="dish-restaurant">
+                                La Piazza
+                            </span>
+
+                            <h3>Margherita Pizza</h3>
+
+                            <p>
+                                Classic pizza with tomato and mozzarella
+                            </p>
+
+                            <div class="dish-bottom">
+
+                                <strong>₹249</strong>
+
+                                <button class="add-btn"
+                                    data-name="Margherita Pizza"
+                                    data-price="249">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Dish 3 -->
+
+                    <article class="dish-card">
+
+                        <div class="dish-image">
+
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
+                                alt="Classic Burger">
+
+                            <span class="veg-indicator non-veg">
+                                ●
+                            </span>
+
+                        </div>
+
+                        <div class="dish-info">
+
+                            <span class="dish-restaurant">
+                                Burger House
+                            </span>
+
+                            <h3>Classic Chicken Burger</h3>
+
+                            <p>
+                                Crispy chicken with fresh vegetables
+                            </p>
+
+                            <div class="dish-bottom">
+
+                                <strong>₹159</strong>
+
+                                <button class="add-btn"
+                                    data-name="Classic Chicken Burger"
+                                    data-price="159">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Dish 4 -->
+
+                    <article class="dish-card">
+
+                        <div class="dish-image">
+
+                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                                alt="Samosa">
+
+                            <span class="veg-indicator veg">
+                                ●
+                            </span>
+
+                        </div>
+
+                        <div class="dish-info">
+
+                            <span class="dish-restaurant">
+                                Spice Route
+                            </span>
+
+                            <h3>Paneer Samosa</h3>
+
+                            <p>
+                                Crispy pastry filled with spiced paneer
+                            </p>
+
+                            <div class="dish-bottom">
+
+                                <strong>₹90</strong>
+
+                                <button class="add-btn"
+                                    data-name="Paneer Samosa"
+                                    data-price="90">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WHY QUICKBITE
+        ====================================================== -->
+
+        <section class="features-section">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">Why QuickBite?</span>
+
+                    <h2>
+                        Everything you need for a great meal
+                    </h2>
+
+                    <p>
+                        From ordering to delivery, we keep things simple.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ⚡
+                        </div>
+
+                        <h3>Fast Delivery</h3>
+
+                        <p>
+                            Get your favourite meals delivered quickly
+                            and reliably.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🍽️
+                        </div>
+
+                        <h3>Great Food</h3>
+
+                        <p>
+                            Discover delicious dishes from restaurants
+                            around you.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            💳
+                        </div>
+
+                        <h3>Easy Payment</h3>
+
+                        <p>
+                            Simple and secure checkout with multiple
+                            payment options.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🛡️
+                        </div>
+
+                        <h3>Safe & Reliable</h3>
+
+                        <p>
+                            Your orders and information are handled
+                            with care.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             APP PROMOTION
+        ====================================================== -->
+
+        <section class="app-section">
+
+            <div class="container">
+
+                <div class="app-banner">
+
+                    <div class="app-image">
+
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=700&q=80"
+                            alt="Food delivery app">
+
+                    </div>
+
+                    <div class="app-content">
+
+                        <span class="section-label">
+                            Coming soon
+                        </span>
+
+                        <h2>
+                            Good food is even better on the go.
+                        </h2>
+
+                        <p>
+                            Our mobile experience is being prepared.
+                            Soon you will be able to order your favourite
+                            food even faster.
+                        </p>
+
+                        <div class="app-buttons">
+
+                            <button class="store-btn">
+                                
+                                <span>
+                                    <small>Coming soon on</small>
+                                    App Store
+                                </span>
+                            </button>
+
+                            <button class="store-btn">
+                                ▶
+                                <span>
+                                    <small>Coming soon on</small>
+                                    Google Play
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section class="about-section" id="about">
+
+            <div class="container about-content">
+
+                <div>
+
+                    <span class="section-label">
+                        About QuickBite
+                    </span>
+
+                    <h2>
+                        Food should be simple.
+                    </h2>
+
+                </div>
+
+                <p>
+                    QuickBite connects you with restaurants and dishes
+                    you love. Our goal is to make food delivery simple,
+                    convenient and enjoyable — from discovering a meal
+                    to getting it at your door.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo">
+                    <span class="logo-icon">🍴</span>
+                    <span>Quick<span class="logo-highlight">Bite</span></span>
+                </a>
+
+                <p>
+                    Delicious food delivered to your doorstep.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>QuickBite</h3>
+
+                <a href="#about">About us</a>
+                <a href="#">Careers</a>
+                <a href="#">Partner with us</a>
+                <a href="#">Terms & Conditions</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Help</h3>
+
+                <a href="#">Contact us</a>
+                <a href="#">FAQs</a>
+                <a href="#">Privacy policy</a>
+                <a href="#">Support</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>📍 Kerala, India</p>
+                <p>📧 hello@quickbite.com</p>
+                <p>📞 +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 QuickBite. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SEARCH OVERLAY
+    ====================================================== -->
+
+    <div class="search-overlay" id="searchOverlay">
+
+        <div class="search-modal">
+
+            <button class="close-modal" id="closeSearch">
+                ×
+            </button>
+
+            <span class="section-label">
+                Search QuickBite
+            </span>
+
+            <h2>
+                What are you looking for?
+            </h2>
+
+            <div class="modal-search">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="modalSearchInput"
+                    placeholder="Search food or restaurants...">
+
+            </div>
+
+            <div id="searchResults" class="search-results"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGIN MODAL
+    ====================================================== -->
+
+    <div class="modal-overlay" id="loginModal">
+
+        <div class="login-modal">
+
+            <button class="close-modal" id="closeLogin">
+                ×
+            </button>
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    🍴
+                </div>
+
+                <h2>Welcome to QuickBite</h2>
+
+                <p>
+                    Login to continue ordering delicious food.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+
+                <button type="submit" class="primary-btn full-width">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="login-footer">
+                Don't have an account?
+                <a href="#" id="signupLink">Create one</a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CART SIDEBAR
+    ====================================================== -->
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <div>
+                <span class="section-label">Your order</span>
+                <h2>Your Cart</h2>
+            </div>
+
+            <button class="close-cart" id="closeCart">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Empty cart -->
+
+        <div class="empty-cart" id="emptyCart">
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <h3>Your cart is empty</h3>
+
+            <p>
+                Add something delicious to get started.
+            </p>
+
+            <button class="primary-btn" id="browseFoodBtn">
+                Browse Food
+            </button>
+
+        </div>
+
+
+        <!-- Cart items -->
+
+        <div class="cart-content" id="cartContent">
+
+            <div class="cart-items" id="cartItems">
+                <!-- JavaScript will add cart items here -->
+            </div>
+
+
+            <div class="cart-summary">
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="cartSubtotal">₹0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery fee</span>
+                    <strong id="deliveryFee">₹40</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Taxes</span>
+                    <strong id="taxAmount">₹0</strong>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="cartTotal">₹0</strong>
+                </div>
+
+                <button class="checkout-btn" id="checkoutBtn">
+                    Proceed to Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Cart background overlay -->
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+
+    <!-- =====================================================
+         CHECKOUT MODAL
+    ====================================================== -->
+
+    <div class="modal-overlay" id="checkoutModal">
+
+        <div class="checkout-modal">
+
+            <button class="close-modal" id="closeCheckout">
+                ×
+            </button>
+
+            <div class="checkout-header">
+
+                <span class="section-label">
+                    Almost there
+                </span>
+
+                <h2>Complete your order</h2>
+
+            </div>
+
+
+            <form id="checkoutForm">
+
+                <div class="form-section">
+
+                    <h3>Delivery details</h3>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+                                Full name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                placeholder="Your name"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="customerPhone">
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                placeholder="+91"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customerAddress">
+                            Delivery address
+                        </label>
+
+                        <textarea
+                            id="customerAddress"
+                            rows="3"
+                            placeholder="House number, street, area..."
+                            required></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-section">
+
+                    <h3>Payment method</h3>
+
+                    <div class="payment-options">
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cod"
+                                checked>
+
+                            <span>
+                                💵
+                                <strong>Cash on Delivery</strong>
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="upi">
+
+                            <span>
+                                📱
+                                <strong>UPI</strong>
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="card">
+
+                            <span>
+                                💳
+                                <strong>Card</strong>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-total">
+
+                    <span>Total payable</span>
+
+                    <strong id="checkoutTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="checkout-btn">
+                    Place Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ORDER SUCCESS MODAL
+    ====================================================== -->
+
+    <div class="modal-overlay" id="successModal">
+
+        <div class="success-modal">
+
+            <button class="close-modal" id="closeSuccess">
+                ×
+            </button>
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Order placed!</h2>
+
+            <p>
+                Your food is being prepared.
+            </p>
+
+            <div class="order-number">
+                Order #QB<span id="orderNumber">0000</span>
+            </div>
+
+            <div class="order-status">
+
+                <div class="status-step completed">
+                    <span>✓</span>
+                    <p>Order placed</p>
+                </div>
+
+                <div class="status-line"></div>
+
+                <div class="status-step">
+                    <span>👨‍🍳</span>
+                    <p>Preparing</p>
+                </div>
+
+                <div class="status-line"></div>
+
+                <div class="status-step">
+                    <span>🛵</span>
+                    <p>On the way</p>
+                </div>
+
+            </div>
+
+            <button class="primary-btn" id="continueShoppingBtn">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOCATION MODAL
+    ====================================================== -->
+
+    <div class="modal-overlay" id="locationModal">
+
+        <div class="location-modal">
+
+            <button class="close-modal" id="closeLocation">
+                ×
+            </button>
+
+            <div class="location-header">
+
+                <div class="location-big-icon">
+                    📍
+                </div>
+
+                <h2>Where should we deliver?</h2>
+
+                <p>
+                    Enter your location to discover restaurants
+                    near you.
+                </p>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="locationInput">
+                    Delivery location
+                </label>
+
+                <input
+                    type="text"
+                    id="locationInput"
+                    placeholder="Enter area, city or PIN code">
+
+            </div>
+
+
+            <button
+                class="primary-btn full-width"
+                id="saveLocationBtn">
+                Save Location
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST NOTIFICATION
+    ====================================================== -->
+
+    <div class="toast" id="toast">
+
+        <span id="toastIcon">
+            ✓
+        </span>
+
+        <span id="toastMessage">
+            Added to cart
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
